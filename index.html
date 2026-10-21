@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<script>document.documentElement.classList.add("i18n-pending");(function(){var h=(location.hash||"").slice(1).toLowerCase(),P=["modes","gameplay","rangs","classement","codes","actus","faq"];document.documentElement.setAttribute("data-route",P.indexOf(h)>-1?h:"home");})()</script>
+<script>document.documentElement.classList.add("i18n-pending");(function(){var h=(location.hash||"").slice(1).toLowerCase(),P=["modes","gameplay","rangs","classement","codes","actus","tournoi","faq"];document.documentElement.setAttribute("data-route",P.indexOf(h)>-1?h:"home");})()</script>
 <title>R1 Battle Royale</title>
 <meta name="description" content="R1 Battle Royale, the battle royale on Roblox. Pre-Season 1 live, Halloween event, code R1LAUNCH.">
 <meta property="og:type" content="website">
@@ -71,12 +71,12 @@ p{margin:0}
 .brand img{width:42px;height:42px;border-radius:50%}
 .brand span{font-family:var(--display);font-weight:800;font-style:italic;font-size:1.3rem;letter-spacing:.02em;text-transform:uppercase;white-space:nowrap}
 .brand b{color:var(--red)}
-.nav ul.links{display:flex;gap:18px;list-style:none;margin:0 0 0 auto;padding:0}
-.nav .wrap{gap:18px}
-.nav ul.links a{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.12em;font-size:.92rem;text-decoration:none;color:var(--mute);transition:color .15s}
+.nav ul.links{display:flex;gap:14px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav .wrap{gap:14px}
+.nav ul.links a{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:.92rem;white-space:nowrap;text-decoration:none;color:var(--mute);transition:color .15s}
 .nav ul.links a:hover{color:var(--bone)}
 .nav .btn{margin-left:4px}
-@media (max-width:1120px){.nav ul.links{display:none}.nav .btn{margin-left:auto}}
+@media (max-width:1180px){.nav ul.links{display:none}.nav .btn{margin-left:auto}}
 @media (max-width:420px){.brand span{font-size:1.1rem}.nav .btn{display:none}}
 
 
@@ -93,7 +93,7 @@ p{margin:0}
 .lang-menu button:hover,.lang-menu button:focus-visible{background:var(--surface-2)}
 .lang-menu button[aria-checked="true"]{color:var(--ember-b)}
 .lang-menu button[aria-checked="true"]::after{content:"✓";margin-left:auto;font-weight:700}
-@media (max-width:1120px){.nav .lang{margin-left:auto}}
+@media (max-width:1180px){.nav .lang{margin-left:auto}}
 .i18n-pending [data-i18n]{visibility:hidden}
 
 
@@ -108,6 +108,8 @@ html[data-route="classement"] main [data-page~="classement"]{display:block}
 html[data-route="codes"] main [data-page~="codes"]{display:block}
 html[data-route="actus"] main [data-page~="actus"]{display:block}
 html[data-route="faq"] main [data-page~="faq"]{display:block}
+html[data-route="tournoi"] main [data-page~="tournoi"]{display:block}
+.nav ul.links a.nav-hot{color:var(--gold)}
 html[data-route]:not([data-route="home"]) main > section:first-of-type{padding-top:72px}
 .nav ul.links a[aria-current="page"]{color:var(--bone);box-shadow:0 2px 0 var(--red)}
 .burger{display:none;flex:none;width:44px;height:40px;background:var(--surface);border:1px solid var(--line);cursor:pointer;padding:0;align-items:center;justify-content:center;flex-direction:column;gap:5px}
@@ -121,10 +123,10 @@ html[data-route]:not([data-route="home"]) main > section:first-of-type{padding-t
 .mnav a:last-child{border-bottom:0}
 .mnav a[aria-current="page"]{color:var(--bone)}
 .mnav a[aria-current="page"]::before{content:"";display:inline-block;width:10px;height:10px;background:var(--red);transform:skewX(-14deg);margin-right:12px;vertical-align:middle}
-@media (max-width:1120px){.burger{display:inline-flex}}
+@media (max-width:1180px){.burger{display:inline-flex}}
 @media (max-width:480px){.nav .wrap{gap:10px}.nav .brand img{width:36px;height:36px}.brand span{font-size:1.05rem}.lang-btn{padding:.42em .5em;gap:6px}.lang-btn .chev{display:none}}
 @media (max-width:370px){.nav .brand span{display:none}}
-@media (min-width:1121px){.mnav{display:none!important}}
+@media (min-width:1181px){.mnav{display:none!important}}
 /* explorer */
 .explore{padding-block:48px 8px}
 .ex-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
@@ -330,6 +332,97 @@ section{padding-block:88px}
   .lb-matches{grid-template-columns:repeat(10,58px)}
 }
 
+
+/* ---------- tournoi ---------- */
+.tn{padding-top:0!important}
+html[data-route="tournoi"] main > section.tn:first-of-type{padding-top:0}
+.tn-hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);background:
+  radial-gradient(60% 90% at 85% 30%,rgba(242,193,78,.18),transparent 60%),
+  radial-gradient(70% 90% at 10% 110%,rgba(215,25,42,.3),transparent 60%),
+  repeating-linear-gradient(-14deg,transparent 0 46px,rgba(255,255,255,.018) 46px 48px),var(--ink)}
+.tn-hero .wrap{padding-block:72px 64px;display:grid;gap:22px}
+.tn-top{display:flex;flex-wrap:wrap;align-items:center;gap:14px}
+.tn-badge::before{background:#2E8B57}
+.tn-title{font-weight:900;font-style:italic;font-size:clamp(3.4rem,11vw,8rem);letter-spacing:-.01em}
+.tn-title span{background:linear-gradient(180deg,var(--ember-b),#C8902A);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+.tn-lead{max-width:50ch;font-size:1.15rem;color:#D9D3E0}
+.tn-count{display:grid;gap:10px}
+.tn-clock{display:grid;grid-template-columns:repeat(4,minmax(0,84px));gap:10px}
+.tn-clock div{display:grid;justify-items:center;min-width:0;padding:12px 10px 10px;background:var(--surface);border:1px solid var(--line)}
+.tn-clock b{font-family:var(--display);font-weight:900;font-style:italic;font-size:2.8rem;line-height:1;font-variant-numeric:tabular-nums}
+.tn-clock span{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:.75rem;color:var(--mute)}
+.tn-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:40px 0 0;border:1px solid var(--line);background:var(--surface)}
+.tn-facts div{padding:20px 22px;border-left:1px solid var(--line);min-width:0}
+.tn-facts div:first-child{border-left:0}
+.tn-facts dt{font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.18em;font-size:.78rem;color:var(--mute)}
+.tn-facts dd{margin:6px 0 0;font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:1.5rem;line-height:1.05;display:grid;gap:4px}
+.tn-facts small{font-family:var(--body);font-style:normal;font-weight:500;text-transform:none;font-size:.9rem;color:var(--mute)}
+@media (max-width:860px){.tn-facts{grid-template-columns:1fr 1fr}.tn-facts div:nth-child(3){border-left:0}.tn-facts div:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:420px){.tn-clock b{font-size:2.2rem}.tn-facts{grid-template-columns:1fr}.tn-facts div{border-left:0!important}.tn-facts div+div{border-top:1px solid var(--line)}}
+.tn-sh{margin:72px 0 28px}
+.tn-h{font-weight:800;font-style:italic;font-size:clamp(2.1rem,5vw,3.2rem)}
+.tn-h em{font-style:inherit;color:var(--red)}
+.podium{display:grid;grid-template-columns:1fr 1.2fr 1fr;gap:16px;align-items:end}
+.prize{position:relative;display:grid;justify-items:center;text-align:center;gap:8px;padding:26px 18px 24px;background:var(--surface);border:1px solid var(--line);min-width:0}
+.prize .skin{width:min(150px,80%);height:auto}
+.prize.p-1{padding-top:34px;background:linear-gradient(180deg,rgba(242,193,78,.14),var(--surface) 60%);border-color:#6B5320}
+.prize.p-1 .skin{width:min(200px,85%)}
+.prize.p-2{border-top:3px solid #D9DBE3}
+.prize.p-3{border-top:3px solid #E58A4B}
+.prize-place{position:absolute;left:16px;top:10px;font-family:var(--display);font-weight:900;font-style:italic;font-size:3rem;line-height:1;color:var(--surface-2)}
+.p-1 .prize-place{color:var(--gold);font-size:3.6rem}
+.p-2 .prize-place{color:#D9DBE3}
+.p-3 .prize-place{color:#E58A4B}
+.prize-place sup{font-size:.4em;vertical-align:super}
+.prize-tag{font-family:var(--display);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.75rem;padding:.25em .7em;background:var(--red);color:var(--bone)}
+.p-1 .prize-tag{background:var(--gold);color:var(--ink)}
+.prize h4{margin:0;font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:1.8rem;line-height:1}
+.p-1 h4{font-size:2.3rem}
+.prize-cr{display:inline-flex;align-items:center;gap:8px;font-size:1.05rem;color:var(--mute)}
+.prize-cr b{font-family:var(--display);font-weight:900;font-size:1.6rem;color:var(--gold);font-variant-numeric:tabular-nums}
+.cr-i{width:24px;height:18px;flex:none}
+@media (max-width:760px){.podium{grid-template-columns:1fr}.prize.p-1{order:-1}}
+.tn-more{margin-top:16px;display:grid;gap:8px}
+.more-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 20px;background:var(--surface);border:1px solid var(--line)}
+.more-row.all{border-style:dashed}
+.mr-pos{font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:1.3rem}
+.mr-cr{display:inline-flex;align-items:center;gap:8px;color:var(--mute)}
+.mr-cr b{font-family:var(--display);font-weight:900;font-size:1.4rem;color:var(--gold);font-variant-numeric:tabular-nums}
+.tn-note{color:var(--mute);font-size:.92rem;max-width:68ch;margin-top:12px}
+.tn-two{display:grid;grid-template-columns:1fr 1fr;gap:20px 48px;align-items:start}
+.tn-two > div{min-width:0}
+@media (max-width:860px){.tn-two{grid-template-columns:1fr}.tn-two .tn-sh{margin-top:56px}}
+.pts-wrap{overflow-x:auto}
+.pts{width:100%;border-collapse:collapse;background:var(--surface);border:1px solid var(--line)}
+.pts th{text-align:left;font-family:var(--display);font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:.8rem;color:var(--mute);padding:12px 18px;border-bottom:1px solid var(--line)}
+.pts th:last-child,.pts td:last-child{text-align:right}
+.pts td{padding:11px 18px;border-bottom:1px solid rgba(44,34,54,.7);font-family:var(--display);font-weight:700;font-size:1.15rem;font-variant-numeric:tabular-nums}
+.pts td:last-child{font-weight:900;font-size:1.3rem}
+.pts tr.win td{color:var(--gold)}
+.pts tr.kill td{color:var(--bone);background:rgba(215,25,42,.12);border-bottom:0}
+.sched{list-style:none;margin:0;padding:0;display:grid;gap:0;border-left:2px solid var(--line);margin-left:6px}
+.sched li{position:relative;display:grid;grid-template-columns:70px 1fr;gap:16px;padding:0 0 26px 26px}
+.sched li:last-child{padding-bottom:0}
+.sched li::before{content:"";position:absolute;left:-8px;top:6px;width:14px;height:14px;background:var(--line);transform:rotate(45deg)}
+.sched li.hot::before{background:var(--red)}
+.sched time{font-family:var(--mono);font-weight:700;color:var(--ember-b);font-size:1.05rem;padding-top:2px}
+.sched strong{display:block;font-family:var(--display);font-weight:800;font-style:italic;text-transform:uppercase;font-size:1.35rem;line-height:1.1}
+.sched span{color:var(--mute)}
+.rules{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.rules li{position:relative;padding:12px 16px 12px 42px;background:var(--surface);border:1px solid var(--line)}
+.rules li::before{content:"";position:absolute;left:16px;top:19px;width:10px;height:10px;background:var(--red);transform:skewX(-14deg)}
+/* promo accueil */
+.tn-promo{padding-block:40px 0}
+.promo{display:grid;grid-template-columns:140px 1fr auto;align-items:center;gap:24px;padding:18px 28px 18px 18px;text-decoration:none;border:1px solid #6B5320;background:linear-gradient(100deg,rgba(242,193,78,.12),var(--surface) 55%);transition:transform .2s,border-color .2s}
+.promo:hover{transform:translateY(-3px);border-color:var(--gold)}
+.promo-skin .skin{width:120px;height:auto;display:block}
+.promo-txt{display:grid;gap:6px;min-width:0}
+.promo-txt strong{font-family:var(--display);font-weight:900;font-style:italic;text-transform:uppercase;font-size:clamp(2rem,5vw,3rem);line-height:.95}
+.promo-txt strong span{color:var(--gold)}
+.promo-txt p{color:#CFC8D6}
+.promo .btn svg{width:1em;height:1em}
+@media (max-width:760px){.promo{grid-template-columns:90px 1fr;padding:16px}.promo-skin .skin{width:90px}.promo .btn{grid-column:1/-1;justify-self:start}}
+
 /* ---------- codes ---------- */
 .codes{background:var(--surface);border-block:1px solid var(--line)}
 .codes-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:start}
@@ -442,11 +535,11 @@ footer nav a:hover{color:var(--bone)}
     </a>
     <ul class="links">
       <li><a href="#modes"><span data-i18n="t0">Modes</span></a></li>
-      <li><a href="#gameplay">Gameplay</a></li>
       <li><a href="#rangs"><span data-i18n="t1">Rangs</span></a></li>
       <li><a href="#classement"><span data-i18n="nlb">Classement</span></a></li>
       <li><a href="#codes">Codes</a></li>
       <li><a href="#actus"><span data-i18n="t2">Actus</span></a></li>
+      <li><a href="#tournoi" class="nav-hot"><span data-i18n="ntn">Tournoi</span></a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
     <div class="lang">
@@ -467,6 +560,7 @@ footer nav a:hover{color:var(--bone)}
       <a href="#classement"><span data-i18n="nlb">Classement</span></a>
       <a href="#codes">Codes</a>
       <a href="#actus"><span data-i18n="t2">Actus</span></a>
+      <a href="#tournoi"><span data-i18n="ntn">Tournoi</span></a>
       <a href="#faq">FAQ</a>
     </nav>
 </header>
@@ -507,6 +601,37 @@ footer nav a:hover{color:var(--bone)}
         <span class="chip"><span data-i18n="t12">Caisse d'Halloween</span></span>
         <span class="chip">Solo &amp; Duo</span>
       </div>
+    </div>
+  </section>
+
+  <!-- ========== PROMO TOURNOI (accueil) ========== -->
+  <section class="tn-promo" data-page="home">
+    <div class="wrap">
+      <a class="promo" href="#tournoi">
+        <div class="promo-skin"><svg class="skin" viewBox="0 0 140 170" aria-hidden="true">
+  <defs><radialGradient id="gp" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#F2C14E" stop-opacity=".45"/><stop offset="1" stop-color="#F2C14E" stop-opacity="0"/></radialGradient></defs>
+  <ellipse cx="70" cy="80" rx="68" ry="78" fill="url(#gp)"/>
+  <ellipse cx="70" cy="162" rx="40" ry="5" fill="#000" opacity=".45"/>
+  <rect x="44" y="104" width="24" height="54" fill="#3A2A12"/><rect x="72" y="104" width="24" height="54" fill="#3A2A12"/>
+  <rect x="44" y="150" width="24" height="8" fill="#0D0A12" opacity=".6"/><rect x="72" y="150" width="24" height="8" fill="#0D0A12" opacity=".6"/>
+  <rect x="42" y="56" width="56" height="50" fill="#E3B341"/>
+  <rect x="20" y="56" width="20" height="48" fill="#E3B341"/><rect x="100" y="56" width="20" height="48" fill="#E3B341"/>
+  <rect x="20" y="96" width="20" height="10" fill="#E8C9A8"/><rect x="100" y="96" width="20" height="10" fill="#E8C9A8"/>
+  <rect x="48" y="14" width="44" height="40" rx="6" fill="#E8C9A8"/>
+  <rect x="58" y="30" width="5" height="6" fill="#0D0A12"/><rect x="77" y="30" width="5" height="6" fill="#0D0A12"/>
+  <path d="M60 42q10 6 20 0" stroke="#0D0A12" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <path d="M46 22 46 4 56 13 63 0 70 11 77 0 84 13 94 4 94 22Z" fill="#F2C14E" stroke="#B8862A" stroke-width="1.5"/>
+  <circle cx="58" cy="17" r="2.6" fill="#D7192A"/><circle cx="70" cy="17" r="2.6" fill="#D7192A"/><circle cx="82" cy="17" r="2.6" fill="#D7192A"/>
+  <path d="M42 56h56v8H42z" fill="#B8862A"/><path d="M62 64h16l-8 22z" fill="#D7192A"/>
+  <rect x="42" y="96" width="56" height="8" fill="#B8862A"/>
+</svg></div>
+        <div class="promo-txt">
+          <span class="label"><span data-i18n="tp1">Samedi 7 novembre · Duo</span></span>
+          <strong>R1 <span>Royal</span> Cup</strong>
+          <p><span data-i18n="tp2">3 skins exclusifs et plus de 50 000 crowns à gagner. Inscription gratuite sur Discord.</span></p>
+        </div>
+        <span class="btn sm"><span data-i18n="tp3">Voir le tournoi</span><svg><use href="#i-arrow"/></svg></span>
+      </a>
     </div>
   </section>
 
@@ -791,6 +916,198 @@ footer nav a:hover{color:var(--bone)}
     </div>
   </section>
 
+  <!-- ========== TOURNOI ========== -->
+  <section id="tournoi" class="tn" data-page="tournoi">
+    <div class="tn-hero">
+      <div class="wrap">
+        <div class="tn-top">
+          <span class="live-badge tn-badge"><span data-i18n="tn1">Inscriptions ouvertes</span></span>
+          <span class="label"><span data-i18n="tn2">Tournoi communautaire · Duo</span></span>
+        </div>
+        <h2 class="tn-title">R1 <span>Royal</span> Cup</h2>
+        <p class="tn-lead"><span data-i18n="tn3">Une soirée, six parties, une seule équipe couronnée. Trois skins exclusifs et plus de 50 000 crowns à gagner.</span></p>
+        <div class="tn-count" aria-live="off">
+          <span class="label"><span data-i18n="tn4">Début dans</span></span>
+          <div class="tn-clock" id="tn-clock" data-start="2026-11-07T19:00:00Z">
+            <div><b id="tn-d">--</b><span data-i18n="tn5">jours</span></div>
+            <div><b id="tn-h">--</b><span data-i18n="tn6">heures</span></div>
+            <div><b id="tn-m">--</b><span>min</span></div>
+            <div><b id="tn-s">--</b><span>sec</span></div>
+          </div>
+        </div>
+        <div class="cta">
+          <a class="btn" href="https://discord.gg/GAzfmBwcMT" target="_blank" rel="noopener"><svg><use href="#i-discord"/></svg><span data-i18n="tn7">S'inscrire sur Discord</span></a>
+          <a class="btn ghost" href="#tn-prix"><span data-i18n="tn8">Voir les récompenses</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <dl class="tn-facts">
+        <div><dt data-i18n="tn9">Date</dt><dd><span data-i18n="tn10">Samedi 7 novembre</span><small><span data-i18n="tn11">20:00, heure de Paris</span></small></dd></div>
+        <div><dt>Format</dt><dd><span data-i18n="tn12">Duo · 6 parties</span><small><span data-i18n="tn13">Classement aux points</span></small></dd></div>
+        <div><dt data-i18n="tn64">Inscription</dt><dd><span data-i18n="tn14">Gratuite</span><small><span data-i18n="tn15">Jusqu'au 6 novembre, 23:59</span></small></dd></div>
+        <div><dt data-i18n="tn16">À gagner</dt><dd><span data-i18n="tn17">3 skins exclusifs</span><small><span data-i18n="tn18">+ 50 000 crowns au total</span></small></dd></div>
+      </dl>
+
+      <!-- récompenses -->
+      <div class="sec-head tn-sh" id="tn-prix">
+        <span class="label"><span data-i18n="tn19">Récompenses</span></span>
+        <h3 class="tn-h"><span data-i18n="tn20">Ce qui est <em>en jeu</em></span></h3>
+        <p><span data-i18n="tn21">Chaque récompense est donnée aux deux joueurs du duo. Les trois skins sont exclusifs à la Royal Cup et ne seront jamais vendus en boutique.</span></p>
+      </div>
+
+      <div class="podium">
+        <article class="prize p-2">
+          <div class="prize-place">2<sup data-i18n="tn22">e</sup></div>
+          <svg class="skin" viewBox="0 0 140 170" aria-hidden="true">
+  <defs><radialGradient id="gb" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#D7192A" stop-opacity=".45"/><stop offset="1" stop-color="#D7192A" stop-opacity="0"/></radialGradient></defs>
+  <ellipse cx="70" cy="80" rx="68" ry="78" fill="url(#gb)"/>
+  <ellipse cx="70" cy="162" rx="40" ry="5" fill="#000" opacity=".45"/>
+  <rect x="44" y="104" width="24" height="54" fill="#120E17"/><rect x="72" y="104" width="24" height="54" fill="#120E17"/>
+  <rect x="44" y="150" width="24" height="8" fill="#0D0A12" opacity=".6"/><rect x="72" y="150" width="24" height="8" fill="#0D0A12" opacity=".6"/>
+  <rect x="42" y="56" width="56" height="50" fill="#1A1420"/>
+  <rect x="20" y="56" width="20" height="48" fill="#1A1420"/><rect x="100" y="56" width="20" height="48" fill="#1A1420"/>
+  <rect x="20" y="96" width="20" height="10" fill="#E8C9A8"/><rect x="100" y="96" width="20" height="10" fill="#E8C9A8"/>
+  <rect x="48" y="14" width="44" height="40" rx="6" fill="#E8C9A8"/>
+  <rect x="58" y="30" width="5" height="6" fill="#0D0A12"/><rect x="77" y="30" width="5" height="6" fill="#0D0A12"/>
+  <path d="M60 42q10 6 20 0" stroke="#0D0A12" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <path d="M46 16q24-14 48 0v8H46z" fill="#D7192A"/>
+  <path d="M42 56h56v18H42z" fill="#0D0A12" opacity=".35"/>
+  <path d="M48 72c6 0 8 10 4 14M60 66c3 8 0 14-3 18M86 70c-4 6-2 12 2 16" stroke="#F4F2F7" stroke-width="3" fill="none" stroke-linecap="round" opacity=".85"/>
+  <path d="M52 104v8M66 104v12M80 104v6M92 104v10" stroke="#D7192A" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M48 38h44v10H48z" fill="#8E0E1B"/><path d="M52 40l4 6M60 40l4 6M68 40l4 6M76 40l4 6M84 40l4 6" stroke="#F4F2F7" stroke-width="1.6"/>
+</svg>
+          <span class="prize-tag" data-i18n="tn23">Skin exclusif</span>
+          <h4><span data-i18n="tn65">Spray Rouge</span></h4>
+          <p class="prize-cr"><svg class="cr-i" viewBox="0 0 24 18" aria-hidden="true"><path d="M2 16V4l5 5 5-8 5 8 5-5v12Z" fill="#F2C14E" stroke="#B8862A" stroke-width="1.2"/></svg><b data-crowns="6000">6 000</b> crowns</p>
+        </article>
+        <article class="prize p-1">
+          <div class="prize-place">1<sup data-i18n="tn24">er</sup></div>
+          <svg class="skin" viewBox="0 0 140 170" aria-hidden="true">
+  <defs><radialGradient id="ga" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#F2C14E" stop-opacity=".45"/><stop offset="1" stop-color="#F2C14E" stop-opacity="0"/></radialGradient></defs>
+  <ellipse cx="70" cy="80" rx="68" ry="78" fill="url(#ga)"/>
+  <ellipse cx="70" cy="162" rx="40" ry="5" fill="#000" opacity=".45"/>
+  <rect x="44" y="104" width="24" height="54" fill="#3A2A12"/><rect x="72" y="104" width="24" height="54" fill="#3A2A12"/>
+  <rect x="44" y="150" width="24" height="8" fill="#0D0A12" opacity=".6"/><rect x="72" y="150" width="24" height="8" fill="#0D0A12" opacity=".6"/>
+  <rect x="42" y="56" width="56" height="50" fill="#E3B341"/>
+  <rect x="20" y="56" width="20" height="48" fill="#E3B341"/><rect x="100" y="56" width="20" height="48" fill="#E3B341"/>
+  <rect x="20" y="96" width="20" height="10" fill="#E8C9A8"/><rect x="100" y="96" width="20" height="10" fill="#E8C9A8"/>
+  <rect x="48" y="14" width="44" height="40" rx="6" fill="#E8C9A8"/>
+  <rect x="58" y="30" width="5" height="6" fill="#0D0A12"/><rect x="77" y="30" width="5" height="6" fill="#0D0A12"/>
+  <path d="M60 42q10 6 20 0" stroke="#0D0A12" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <path d="M46 22 46 4 56 13 63 0 70 11 77 0 84 13 94 4 94 22Z" fill="#F2C14E" stroke="#B8862A" stroke-width="1.5"/>
+  <circle cx="58" cy="17" r="2.6" fill="#D7192A"/><circle cx="70" cy="17" r="2.6" fill="#D7192A"/><circle cx="82" cy="17" r="2.6" fill="#D7192A"/>
+  <path d="M42 56h56v8H42z" fill="#B8862A"/><path d="M62 64h16l-8 22z" fill="#D7192A"/>
+  <rect x="42" y="96" width="56" height="8" fill="#B8862A"/>
+</svg>
+          <span class="prize-tag" data-i18n="tn23b">Skin exclusif · Champion</span>
+          <h4><span data-i18n="tn25">Roi du Drop</span></h4>
+          <p class="prize-cr"><svg class="cr-i" viewBox="0 0 24 18" aria-hidden="true"><path d="M2 16V4l5 5 5-8 5 8 5-5v12Z" fill="#F2C14E" stroke="#B8862A" stroke-width="1.2"/></svg><b data-crowns="10000">10 000</b> crowns</p>
+        </article>
+        <article class="prize p-3">
+          <div class="prize-place">3<sup data-i18n="tn22b">e</sup></div>
+          <svg class="skin" viewBox="0 0 140 170" aria-hidden="true">
+  <defs><radialGradient id="gc" cx="50%" cy="45%" r="60%"><stop offset="0" stop-color="#8D5BE0" stop-opacity=".45"/><stop offset="1" stop-color="#8D5BE0" stop-opacity="0"/></radialGradient></defs>
+  <ellipse cx="70" cy="80" rx="68" ry="78" fill="url(#gc)"/>
+  <ellipse cx="70" cy="162" rx="40" ry="5" fill="#000" opacity=".45"/>
+  <rect x="44" y="104" width="24" height="54" fill="#1E1230"/><rect x="72" y="104" width="24" height="54" fill="#1E1230"/>
+  <rect x="44" y="150" width="24" height="8" fill="#0D0A12" opacity=".6"/><rect x="72" y="150" width="24" height="8" fill="#0D0A12" opacity=".6"/>
+  <rect x="42" y="56" width="56" height="50" fill="#3C2266"/>
+  <rect x="20" y="56" width="20" height="48" fill="#3C2266"/><rect x="100" y="56" width="20" height="48" fill="#3C2266"/>
+  <rect x="20" y="96" width="20" height="10" fill="#E8C9A8"/><rect x="100" y="96" width="20" height="10" fill="#E8C9A8"/>
+  <rect x="48" y="14" width="44" height="40" rx="6" fill="#E8C9A8"/>
+  <rect x="58" y="30" width="5" height="6" fill="#0D0A12"/><rect x="77" y="30" width="5" height="6" fill="#0D0A12"/>
+  <path d="M60 42q10 6 20 0" stroke="#0D0A12" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+  <path d="M46 12q24-12 48 0v18H46z" fill="#2B1745"/>
+  <rect x="52" y="26" width="36" height="12" rx="3" fill="#B98CFF"/><rect x="54" y="28" width="12" height="4" fill="#fff" opacity=".7"/>
+  <path d="M42 56h56v6H42z" fill="#8D5BE0"/><path d="M70 62v42" stroke="#8D5BE0" stroke-width="3"/>
+  <circle cx="54" cy="78" r="5" fill="none" stroke="#B98CFF" stroke-width="2"/>
+</svg>
+          <span class="prize-tag" data-i18n="tn23c">Skin exclusif</span>
+          <h4><span data-i18n="tn26">Nuit Violette</span></h4>
+          <p class="prize-cr"><svg class="cr-i" viewBox="0 0 24 18" aria-hidden="true"><path d="M2 16V4l5 5 5-8 5 8 5-5v12Z" fill="#F2C14E" stroke="#B8862A" stroke-width="1.2"/></svg><b data-crowns="4000">4 000</b> crowns</p>
+        </article>
+      </div>
+
+      <div class="tn-more">
+        <div class="more-row"><span class="mr-pos" data-i18n="tn27">4e – 5e</span><span class="mr-cr"><svg class="cr-i" viewBox="0 0 24 18" aria-hidden="true"><path d="M2 16V4l5 5 5-8 5 8 5-5v12Z" fill="#F2C14E" stroke="#B8862A" stroke-width="1.2"/></svg><b data-crowns="2000">2 000</b> crowns</span></div>
+        <div class="more-row"><span class="mr-pos" data-i18n="tn28">6e – 10e</span><span class="mr-cr"><svg class="cr-i" viewBox="0 0 24 18" aria-hidden="true"><path d="M2 16V4l5 5 5-8 5 8 5-5v12Z" fill="#F2C14E" stroke="#B8862A" stroke-width="1.2"/></svg><b data-crowns="1000">1 000</b> crowns</span></div>
+        <div class="more-row all"><span class="mr-pos" data-i18n="tn29">Tous les participants</span><span class="mr-cr"><svg class="cr-i" viewBox="0 0 24 18" aria-hidden="true"><path d="M2 16V4l5 5 5-8 5 8 5-5v12Z" fill="#F2C14E" stroke="#B8862A" stroke-width="1.2"/></svg><b data-crowns="250">250</b> crowns</span></div>
+        <p class="tn-note"><span data-i18n="tn30">Montants par joueur. Les récompenses sont créditées sur le compte Roblox de chaque joueur dans les 72 heures après la validation des résultats.</span></p>
+      </div>
+
+      <!-- points + programme -->
+      <div class="tn-two">
+        <div>
+          <div class="sec-head tn-sh">
+            <span class="label"><span data-i18n="tn31">Comment on marque</span></span>
+            <h3 class="tn-h"><span data-i18n="tn32">Système de <em>points</em></span></h3>
+          </div>
+          <div class="pts-wrap">
+            <table class="pts">
+              <thead><tr><th data-i18n="tn33">Placement</th><th>Points</th></tr></thead>
+              <tbody>
+                <tr class="win"><td><span data-i18n="tn34">Top 1</span></td><td>12</td></tr>
+                <tr><td>2</td><td>9</td></tr>
+                <tr><td>3</td><td>7</td></tr>
+                <tr><td>4</td><td>5</td></tr>
+                <tr><td>5</td><td>4</td></tr>
+                <tr><td>6 – 10</td><td>2</td></tr>
+                <tr><td data-i18n="tn35">11 et plus</td><td>0</td></tr>
+                <tr class="kill"><td><span data-i18n="tn36">Chaque élimination</span></td><td>+1</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="tn-note"><span data-i18n="tn37">Les éliminations des deux joueurs s'additionnent. En cas d'égalité : le plus de Top 1, puis le plus d'éliminations, puis le meilleur résultat sur la dernière partie.</span></p>
+        </div>
+
+        <div>
+          <div class="sec-head tn-sh">
+            <span class="label"><span data-i18n="tn38">Samedi 7 novembre</span></span>
+            <h3 class="tn-h"><span data-i18n="tn39">Le <em>programme</em></span></h3>
+          </div>
+          <ol class="sched">
+            <li><time>19:15</time><div><strong>Check-in</strong><span data-i18n="tn40">Les deux joueurs confirment leur présence sur le Discord. Sans check-in, le duo est retiré.</span></div></li>
+            <li><time>19:45</time><div><strong data-i18n="tn41">Ouverture du serveur</strong><span data-i18n="tn42">Le lien du serveur privé est envoyé aux duos inscrits.</span></div></li>
+            <li class="hot"><time>20:00</time><div><strong data-i18n="tn43">Parties 1 à 6</strong><span data-i18n="tn44">Environ 25 minutes par partie, classement mis à jour sur Discord après chaque partie.</span></div></li>
+            <li><time>22:45</time><div><strong data-i18n="tn45">Résultats</strong><span data-i18n="tn46">Annonce du podium et des gagnants sur Discord et X.</span></div></li>
+          </ol>
+        </div>
+      </div>
+
+      <!-- inscription + règles -->
+      <div class="tn-two">
+        <div>
+          <div class="sec-head tn-sh">
+            <span class="label"><span data-i18n="tn47">En 3 étapes</span></span>
+            <h3 class="tn-h"><span data-i18n="tn48">S'<em>inscrire</em></span></h3>
+          </div>
+          <ol class="steps">
+            <li><div><strong data-i18n="tn49">Rejoins le Discord</strong><span data-i18n="tn50">Les deux joueurs du duo doivent être sur le serveur officiel R1.</span></div></li>
+            <li><div><strong data-i18n="tn51">Inscris ton duo</strong><span data-i18n="tn52">Dans le salon du tournoi, donne le nom de l'équipe et les deux pseudos Roblox.</span></div></li>
+            <li><div><strong data-i18n="tn53">Fais le check-in</strong><span data-i18n="tn54">Le jour J entre 19:15 et 19:45. Places attribuées dans l'ordre d'inscription.</span></div></li>
+          </ol>
+        </div>
+        <div>
+          <div class="sec-head tn-sh">
+            <span class="label"><span data-i18n="tn55">À respecter</span></span>
+            <h3 class="tn-h"><span data-i18n="tn56">Le <em>règlement</em></span></h3>
+          </div>
+          <ul class="rules">
+            <li><span data-i18n="tn57">Un compte Roblox par joueur, dans une seule équipe.</span></li>
+            <li><span data-i18n="tn58">Aucun remplaçant après le check-in.</span></li>
+            <li><span data-i18n="tn59">Teaming entre duos interdit : disqualification immédiate des équipes concernées.</span></li>
+            <li><span data-i18n="tn60">Triche, exploit ou macro : disqualification et perte de toutes les récompenses.</span></li>
+            <li><span data-i18n="tn61">Garde une capture de ton écran de fin de partie en cas de litige.</span></li>
+            <li><span data-i18n="tn62">Tu peux streamer avec 2 minutes de délai minimum.</span></li>
+            <li><span data-i18n="tn63">Les décisions des organisateurs sont définitives.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== FAQ ========== -->
   <section id="faq" data-page="faq">
     <div class="wrap">
@@ -843,6 +1160,9 @@ footer nav a:hover{color:var(--bone)}
     <a class="brand" href="#accueil"><img src="data:image/webp;base64,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" alt=""><span><b>R1</b> Battle Royale</span></a>
     <nav aria-label="Pied de page">
       <a href="#modes"><span data-i18n="t0">Modes</span></a>
+      <a href="#gameplay">Gameplay</a>
+      <a href="#classement"><span data-i18n="nlb">Classement</span></a>
+      <a href="#tournoi"><span data-i18n="ntn">Tournoi</span></a>
       <a href="#codes">Codes</a>
       <a href="#actus"><span data-i18n="t2">Actus</span></a>
       <a href="https://discord.gg/GAzfmBwcMT" target="_blank" rel="noopener">Discord</a>
@@ -863,7 +1183,7 @@ footer nav a:hover{color:var(--bone)}
 
 <script>
 (function(){
-  var EN={"nhome": "Home", "ex1": "In-game top 10", "ex2": "Pre-Season 1 and Halloween, solo and duo.", "ex3": "5 modes", "ex4": "Solo, Duo, Combat Zone and the Halloween modes.", "ex5": "Free rewards", "ex6": "Active codes and how to use them.", "ex7": "The four ranked tiers.","nlb": "Leaderboard", "lb1":"Leaderboards", "lb2": "The <em>leaderboard</em>", "lb3":"Your total adds up the points from your 10 best matches. Each leaderboard ranks the top 250.", "lb4": "Solo leaderboard · Top 250", "lb5": "Ends in", "lb6": "Player", "lb7": "Rank", "lb8": "Top 6 preview as of October 20. The live top 250 arrives when the site goes online.", "lb9": "eliminations per match", "lb10": "end-of-season reward","t0": "Modes", "t1": "Ranks", "t2": "News", "t3": "Play", "t4": "Play on Roblox", "t5": "Join the Discord", "t6": "Pre-Season 1 · Halloween Event", "t7": "Jump out of the plane, loot whatever you find, grab a helmet and be the last one standing. The PvP battle royale on Roblox, solo or duo.", "t8": "<strong>Skulls, crowns and 5 alpha crates</strong> for free", "t9": "Live event", "t10": "Halloween: <span>Midnight Candy Rush</span>", "t11": "New limited-time mode and a new Halloween crate. Available in solo and duo while the event lasts.", "t12": "Halloween Crate", "t13": "Pick your drop", "t14": "Game <em>modes</em>", "t15": "Three permanent modes and two Halloween modes for the length of the event.", "t16": "You against the whole lobby. No allies, no second chances. Last one alive wins.", "t17": "Drop in with a teammate. Share the loot, cover each other and finish the match together.", "t18": "The mode built for fighting. You came to fight, not to hide.", "t19": "Halloween event · limited time", "t20": "Midnight Candy Rush, alone against everyone.", "t21": "Midnight Candy Rush with your teammate.", "t22": "Rules of the ground", "t23": "Loot. Fight. <em>Win.</em>", "t24": "What you need to know before your first jump.", "t25": "Rule #1", "t26": "Find a helmet", "t27": "A helmet blocks the first headshot. Without one, a single headshot ends your game.", "t30": "After one headshot.", "t31": "Surprise parachute", "t32": "Parachutes have a chance to carry a shotgun. Keep your eyes open on the way down.", "t33": "Air drop", "t34": "Every match starts in the fighter jet. Pick when to jump and where to land.", "t35": "Vehicles", "t36": "Police car, SUV: take the wheel to cross the map or outrun the zone.", "t37": "Crates", "t38": "Open alpha crates and the Halloween crate to unlock cosmetics.", "t39": "Ranked", "t40": "Climb to <em>Royalty</em>", "t41": "Four ranks, one crown. Every win gets you closer to the top.", "t42": "Rank 1", "t43": "Rank 2", "t44": "Rank 3", "t45": "Top", "t46": "Platinum", "t47": "Diamond", "t48": "Where it all starts.", "t49": "You know how to survive.", "t50": "The lobby's elite.", "t51": "The R1 crown. Few make it.", "t52": "Free rewards", "t53": "Active <em>codes</em>", "t54": "Copy the code, enter it in game, claim your rewards.", "t55": "Active", "t56": "Launch code", "t57": "Skulls", "t58": "Crowns", "t59": "<b>5</b> alpha crates", "t60": "Copy code", "t61": "<strong>Copy the code</strong><span>Click “Copy code”.</span>", "t62": "<strong>Launch R1 Battle Royale</strong><span>Open the game on Roblox from this site or the app.</span>", "t63": "<strong>Enter the code in game</strong><span>Paste it on the codes screen and confirm. The rewards land on your account.</span>", "t64": "Patch notes &amp; news", "t65": "Live", "t66": "Event", "t67": "Season", "t68": "The Halloween event is live", "t69": "R1's first seasonal event brings new content.", "t70": "New LTM: Midnight Candy Rush", "t71": "Halloween Solo and Halloween Duo modes", "t72": "New Halloween crate", "t73": "Pre-Season 1 is live", "t74": "R1 Battle Royale is playable on Roblox. Use code R1LAUNCH to get skulls, crowns and 5 alpha crates.", "t75": "Community", "t76": "Join the <em>squad</em>", "t77": "Official Discord", "t78": "Announcements, new codes, duo partners, bug reports and talking with the team.", "t79": "Join the server <svg width=\"22\" height=\"22\"><use href=\"#i-arrow\"/></svg>", "t80": "Follow us on X", "t81": "News, events and codes first.", "t82": "Questions", "t83": "How do I play R1 Battle Royale?", "t84": "Click “Play on Roblox” and the game page opens on Roblox. You need a Roblox account.", "t85": "How do I play with a friend?", "t86": "Pick Duo, or Halloween Duo during the event, to team up as a pair.", "t87": "What does the helmet do?", "t88": "It blocks the first headshot. Without one, a single headshot takes you out. It's the first thing to look for when you land.", "t89": "Where can I find new codes?", "t90": "Right here, and first on the official Discord and X account.", "t91": "What does “Pre-Season” mean?", "t92": "It's the game's launch season, before Season 1.", "t93": "I found a bug. What do I do?", "t94": "Report it on the official Discord, with a screenshot or video if you can.", "t95": "Ready to <span>drop</span>?", "t96": "Pre-Season 1 is live. The lobby is waiting.", "t97": "© 2026 R1 Battle Royale · Created by @SafeGameZ", "t98": "Available on Roblox. Not affiliated with Roblox Corporation.", "hpa": "With helmet", "hps": "No helmet"};
+  var EN={"tn65":"Red Spray","tn64":"Registration","ntn": "Tournament", "tn1": "Registration open", "tn2": "Community tournament · Duo", "tn3": "One night, six matches, one crowned team. Three exclusive skins and over 50,000 crowns up for grabs.", "tn4": "Starts in", "tn5": "days", "tn6": "hours", "tn7": "Register on Discord", "tn8": "See the rewards", "tn9": "Date", "tn10": "Saturday, November 7", "tn11": "8:00 PM Paris time", "tn12": "Duo · 6 matches", "tn13": "Points-based ranking", "tn14": "Free", "tn15": "Until November 6, 11:59 PM", "tn16": "Prizes", "tn17": "3 exclusive skins", "tn18": "+ 50,000 crowns in total", "tn19": "Rewards", "tn20": "What's <em>at stake</em>", "tn21": "Every reward goes to both players of the duo. The three skins are exclusive to the Royal Cup and will never be sold in the shop.", "tn22": "nd", "tn22b": "rd", "tn23": "Exclusive skin", "tn23b": "Exclusive skin · Champion", "tn23c": "Exclusive skin", "tn24": "st", "tn25": "King of the Drop", "tn26": "Violet Night", "tn27": "4th – 5th", "tn28": "6th – 10th", "tn29": "Every participant", "tn30": "Amounts are per player. Rewards are credited to each player's Roblox account within 72 hours of the results being confirmed.", "tn31": "How you score", "tn32": "Points <em>system</em>", "tn33": "Placement", "tn34": "Top 1", "tn35": "11th and below", "tn36": "Each elimination", "tn37": "Both players' eliminations count. Tiebreakers: most Top 1 finishes, then most eliminations, then best result in the last match.", "tn38": "Saturday, November 7", "tn39": "The <em>schedule</em>", "tn40": "Both players confirm they're present on Discord. Duos without a check-in are removed.", "tn41": "Server opens", "tn42": "The private server link is sent to registered duos.", "tn43": "Matches 1 to 6", "tn44": "About 25 minutes per match, standings updated on Discord after each one.", "tn45": "Results", "tn46": "Podium and winners announced on Discord and X.", "tn47": "In 3 steps", "tn48": "How to <em>register</em>", "tn49": "Join the Discord", "tn50": "Both players of the duo must be on the official R1 server.", "tn51": "Register your duo", "tn52": "In the tournament channel, post your team name and both Roblox usernames.", "tn53": "Check in", "tn54": "On the day, between 7:15 and 7:45 PM. Spots are given in registration order.", "tn55": "House rules", "tn56": "The <em>rules</em>", "tn57": "One Roblox account per player, on one team only.", "tn58": "No substitutes after check-in.", "tn59": "No teaming between duos: the teams involved are disqualified on the spot.", "tn60": "Cheats, exploits or macros: disqualification and loss of all rewards.", "tn61": "Keep a screenshot of your end-of-match screen in case of a dispute.", "tn62": "You can stream with a delay of at least 2 minutes.", "tn63": "Organizers' decisions are final.", "tp1": "Saturday, November 7 · Duo", "tp2": "3 exclusive skins and over 50,000 crowns to win. Free registration on Discord.", "tp3": "See the tournament","nhome": "Home", "ex1": "In-game top 10", "ex2": "Pre-Season 1 and Halloween, solo and duo.", "ex3": "5 modes", "ex4": "Solo, Duo, Combat Zone and the Halloween modes.", "ex5": "Free rewards", "ex6": "Active codes and how to use them.", "ex7": "The four ranked tiers.","nlb": "Leaderboard", "lb1":"Leaderboards", "lb2": "The <em>leaderboard</em>", "lb3":"Your total adds up the points from your 10 best matches. Each leaderboard ranks the top 250.", "lb4": "Solo leaderboard · Top 250", "lb5": "Ends in", "lb6": "Player", "lb7": "Rank", "lb8": "Top 6 preview as of October 20. The live top 250 arrives when the site goes online.", "lb9": "eliminations per match", "lb10": "end-of-season reward","t0": "Modes", "t1": "Ranks", "t2": "News", "t3": "Play", "t4": "Play on Roblox", "t5": "Join the Discord", "t6": "Pre-Season 1 · Halloween Event", "t7": "Jump out of the plane, loot whatever you find, grab a helmet and be the last one standing. The PvP battle royale on Roblox, solo or duo.", "t8": "<strong>Skulls, crowns and 5 alpha crates</strong> for free", "t9": "Live event", "t10": "Halloween: <span>Midnight Candy Rush</span>", "t11": "New limited-time mode and a new Halloween crate. Available in solo and duo while the event lasts.", "t12": "Halloween Crate", "t13": "Pick your drop", "t14": "Game <em>modes</em>", "t15": "Three permanent modes and two Halloween modes for the length of the event.", "t16": "You against the whole lobby. No allies, no second chances. Last one alive wins.", "t17": "Drop in with a teammate. Share the loot, cover each other and finish the match together.", "t18": "The mode built for fighting. You came to fight, not to hide.", "t19": "Halloween event · limited time", "t20": "Midnight Candy Rush, alone against everyone.", "t21": "Midnight Candy Rush with your teammate.", "t22": "Rules of the ground", "t23": "Loot. Fight. <em>Win.</em>", "t24": "What you need to know before your first jump.", "t25": "Rule #1", "t26": "Find a helmet", "t27": "A helmet blocks the first headshot. Without one, a single headshot ends your game.", "t30": "After one headshot.", "t31": "Surprise parachute", "t32": "Parachutes have a chance to carry a shotgun. Keep your eyes open on the way down.", "t33": "Air drop", "t34": "Every match starts in the fighter jet. Pick when to jump and where to land.", "t35": "Vehicles", "t36": "Police car, SUV: take the wheel to cross the map or outrun the zone.", "t37": "Crates", "t38": "Open alpha crates and the Halloween crate to unlock cosmetics.", "t39": "Ranked", "t40": "Climb to <em>Royalty</em>", "t41": "Four ranks, one crown. Every win gets you closer to the top.", "t42": "Rank 1", "t43": "Rank 2", "t44": "Rank 3", "t45": "Top", "t46": "Platinum", "t47": "Diamond", "t48": "Where it all starts.", "t49": "You know how to survive.", "t50": "The lobby's elite.", "t51": "The R1 crown. Few make it.", "t52": "Free rewards", "t53": "Active <em>codes</em>", "t54": "Copy the code, enter it in game, claim your rewards.", "t55": "Active", "t56": "Launch code", "t57": "Skulls", "t58": "Crowns", "t59": "<b>5</b> alpha crates", "t60": "Copy code", "t61": "<strong>Copy the code</strong><span>Click “Copy code”.</span>", "t62": "<strong>Launch R1 Battle Royale</strong><span>Open the game on Roblox from this site or the app.</span>", "t63": "<strong>Enter the code in game</strong><span>Paste it on the codes screen and confirm. The rewards land on your account.</span>", "t64": "Patch notes &amp; news", "t65": "Live", "t66": "Event", "t67": "Season", "t68": "The Halloween event is live", "t69": "R1's first seasonal event brings new content.", "t70": "New LTM: Midnight Candy Rush", "t71": "Halloween Solo and Halloween Duo modes", "t72": "New Halloween crate", "t73": "Pre-Season 1 is live", "t74": "R1 Battle Royale is playable on Roblox. Use code R1LAUNCH to get skulls, crowns and 5 alpha crates.", "t75": "Community", "t76": "Join the <em>squad</em>", "t77": "Official Discord", "t78": "Announcements, new codes, duo partners, bug reports and talking with the team.", "t79": "Join the server <svg width=\"22\" height=\"22\"><use href=\"#i-arrow\"/></svg>", "t80": "Follow us on X", "t81": "News, events and codes first.", "t82": "Questions", "t83": "How do I play R1 Battle Royale?", "t84": "Click “Play on Roblox” and the game page opens on Roblox. You need a Roblox account.", "t85": "How do I play with a friend?", "t86": "Pick Duo, or Halloween Duo during the event, to team up as a pair.", "t87": "What does the helmet do?", "t88": "It blocks the first headshot. Without one, a single headshot takes you out. It's the first thing to look for when you land.", "t89": "Where can I find new codes?", "t90": "Right here, and first on the official Discord and X account.", "t91": "What does “Pre-Season” mean?", "t92": "It's the game's launch season, before Season 1.", "t93": "I found a bug. What do I do?", "t94": "Report it on the official Discord, with a screenshot or video if you can.", "t95": "Ready to <span>drop</span>?", "t96": "Pre-Season 1 is live. The lobby is waiting.", "t97": "© 2026 R1 Battle Royale · Created by @SafeGameZ", "t98": "Available on Roblox. Not affiliated with Roblox Corporation.", "hpa": "With helmet", "hps": "No helmet"};
   var FR={}, ATTR={
     fr:{lang:"Langue",title:"R1 Battle Royale",heroCopy:"Copier le code R1LAUNCH",scene:"Un joueur casqué tire devant une voiture de police et un SUV en feu, un avion de chasse passe et un airdrop descend en parachute",home:"R1 Battle Royale, accueil",hp:"Schéma : avec casque, le premier headshot est bloqué ; sans casque, il est fatal",foot:"Pied de page",ok:"Code R1LAUNCH copié. Colle-le en jeu.",ko:"Copie automatique impossible : le code est sélectionné, fais Ctrl+C.",copied:"Copié !",sel:"Sélectionné",desc:"R1 Battle Royale, le battle royale sur Roblox. Pre-Season 1 en ligne, événement Halloween, code R1LAUNCH."},
     en:{lang:"Language",title:"R1 Battle Royale",heroCopy:"Copy code R1LAUNCH",scene:"A player in a helmet shoots in front of a burning police car and SUV while a fighter jet flies over and an airdrop comes down by parachute",home:"R1 Battle Royale, home",hp:"Diagram: with a helmet the first headshot is blocked; without one it is fatal",foot:"Footer",ok:"Code R1LAUNCH copied. Paste it in game.",ko:"Couldn't copy automatically: the code is selected, press Ctrl+C.",copied:"Copied!",sel:"Selected",desc:"R1 Battle Royale, the battle royale on Roblox. Pre-Season 1 live, Halloween event, code R1LAUNCH."}
@@ -984,9 +1304,9 @@ footer nav a:hover{color:var(--bone)}
 </script>
 <script>
 (function(){
-  var P=["modes","gameplay","rangs","classement","codes","actus","faq"];
+  var P=["modes","gameplay","rangs","classement","codes","actus","tournoi","faq"];
   var root=document.documentElement, burger=document.getElementById('burger'), mnav=document.getElementById('mnav');
-  var NAMES={fr:{home:"Accueil",modes:"Modes",gameplay:"Gameplay",rangs:"Rangs",classement:"Classement",codes:"Codes",actus:"Actus",faq:"FAQ"},en:{home:"Home",modes:"Modes",gameplay:"Gameplay",rangs:"Ranks",classement:"Leaderboard",codes:"Codes",actus:"News",faq:"FAQ"}};
+  var NAMES={fr:{home:"Accueil",modes:"Modes",gameplay:"Gameplay",rangs:"Rangs",classement:"Classement",codes:"Codes",actus:"Actus",tournoi:"Tournoi",faq:"FAQ"},en:{home:"Home",modes:"Modes",gameplay:"Gameplay",rangs:"Ranks",classement:"Leaderboard",codes:"Codes",actus:"News",tournoi:"Tournament",faq:"FAQ"}};
   function current(){var h=(location.hash||'').slice(1).toLowerCase();return P.indexOf(h)>-1?h:'home';}
   function setTitle(r){var l=root.lang==='en'?'en':'fr';document.title=r==='home'?'R1 Battle Royale':NAMES[l][r]+' · R1 Battle Royale';}
   function go(first){
@@ -1010,6 +1330,23 @@ footer nav a:hover{color:var(--bone)}
   window.addEventListener('hashchange',function(){go(false);});
   try{new MutationObserver(function(){setTitle(current());}).observe(root,{attributes:true,attributeFilter:['lang']});}catch(e){}
   go(true);
+})();
+</script>
+<script>
+(function(){
+  var c=document.getElementById('tn-clock'); if(!c) return;
+  var start=new Date(c.getAttribute('data-start')).getTime();
+  function pad(n){return (n<10?'0':'')+n;}
+  function tick(){
+    var ms=Math.max(0,start-Date.now()), s=Math.floor(ms/1000);
+    document.getElementById('tn-d').textContent=Math.floor(s/86400);
+    document.getElementById('tn-h').textContent=pad(Math.floor(s%86400/3600));
+    document.getElementById('tn-m').textContent=pad(Math.floor(s%3600/60));
+    document.getElementById('tn-s').textContent=pad(s%60);
+  }
+  function cr(){var loc=document.documentElement.lang==='en'?'en-US':'fr-FR';document.querySelectorAll('[data-crowns]').forEach(function(b){b.textContent=Number(b.getAttribute('data-crowns')).toLocaleString(loc);});}
+  tick(); cr(); setInterval(tick,1000);
+  try{new MutationObserver(cr).observe(document.documentElement,{attributes:true,attributeFilter:['lang']});}catch(e){}
 })();
 </script>
 
